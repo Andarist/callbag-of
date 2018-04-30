@@ -1,6 +1,6 @@
 # callbag-of
 
-Callbag source factory that emits values specified as arguments. It's similar [`fromIter`](https://github.com/staltz/callbag-from-iter/), but this one creates a listenable source and does not rely on iteration protol.
+Callbag source factory that emits values specified as arguments. It's similar to [`fromIter`](https://github.com/staltz/callbag-from-iter/), but this one creates a listenable source and does not rely on iteration protol.
 
 ## Example
 
