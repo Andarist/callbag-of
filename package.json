@@ -1,6 +1,6 @@
 {
   "name": "callbag-of",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "👜 Callbag source factory that emits values specified as arguments.",
   "main": "dist/callbag-of.js",
   "module": "dist/callbag-of.es.js",
