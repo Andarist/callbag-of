@@ -4,7 +4,7 @@ export default function of(...values) {
 
     let disposed = false
 
-    sink(0, (type, data) => {
+    sink(0, type => {
       if (type !== 2) return
       disposed = true
     })
