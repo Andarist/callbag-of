@@ -13,12 +13,15 @@ test('works', () => {
 
   pipe(
     of(10, 20, 30, 40, 50),
+    tap(noop, noop, () => {
+      actual.push('completion')
+    }),
     observe(value => {
       actual.push(value)
     }),
   )
 
-  expect(actual).toEqual([10, 20, 30, 40, 50])
+  expect(actual).toEqual([10, 20, 30, 40, 50, 'completion'])
 })
 
 test('should stop emitting values (& completion) after being unsubscribed', done => {
