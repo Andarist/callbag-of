@@ -9,13 +9,11 @@ export default function of(...values) {
       disposed = true
     })
 
-    for (const value of values) {
-      if (disposed) break
-      sink(1, value)
+    while (values.length !== 0) {
+      if (disposed) return
+      sink(1, values.shift())
     }
 
-    if (!disposed) {
-      sink(2)
-    }
+    sink(2)
   }
 }
