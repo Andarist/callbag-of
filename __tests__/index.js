@@ -51,3 +51,28 @@ test('should stop emitting values (& completion) after being unsubscribed', done
   expect(actual).toEqual([10, 20, 30])
   done()
 })
+
+test('should not emit completion if unsubscribed between emitting last value & completion', done => {
+  const actual = []
+
+  let disposed = false
+
+  const failAfterDisposal = () => {
+    if (!disposed) return
+    done.fail(
+      'Nothing should be emitted down to the sink after the source gets unsubscribed.',
+    )
+  }
+
+  pipe(
+    of(10, 20, 30),
+    tapUp(noop, noop, () => {
+      disposed = true
+    }),
+    tap(failAfterDisposal, failAfterDisposal, failAfterDisposal),
+    take(3),
+    observe(noop),
+  )
+
+  done()
+})
