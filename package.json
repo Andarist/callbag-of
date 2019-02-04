@@ -2,10 +2,11 @@
   "name": "callbag-of",
   "version": "1.0.1",
   "description": "👜 Callbag source factory that emits values specified as arguments.",
-  "main": "dist/callbag-of.js",
+  "main": "dist/callbag-of.cjs.js",
   "module": "dist/callbag-of.esm.js",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
     "test": "jest --env=node",
