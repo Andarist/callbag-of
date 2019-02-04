@@ -1,5 +1,5 @@
 {
-  "*.{js,md}": [
+  "*.{js,ts,md}": [
     "prettier --write",
     "git add"
   ]
