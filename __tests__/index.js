@@ -76,3 +76,22 @@ test('should not emit completion if unsubscribed between emitting last value & c
 
   done()
 })
+
+test('should emit to multiple subscribers.', done => {
+  const received = []
+
+  const src = of(7, 42)
+
+  pipe(
+    src,
+    observe(v => received.push(v)),
+  )
+  pipe(
+    src,
+    observe(v => received.push(v)),
+  )
+
+  expect(received).toEqual([7, 42, 7, 42])
+
+  done()
+})
