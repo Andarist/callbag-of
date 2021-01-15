@@ -2,16 +2,17 @@ export default function of(...values) {
   return (start, sink) => {
     if (start !== 0) return
 
+    let copy = values.slice()
     let disposed = false
 
     sink(0, type => {
       if (type !== 2) return
       disposed = true
-      values.length = 0
+      copy.length = 0
     })
 
-    while (values.length !== 0) {
-      sink(1, values.shift())
+    while (copy.length !== 0) {
+      sink(1, copy.shift())
     }
 
     if (disposed) return
