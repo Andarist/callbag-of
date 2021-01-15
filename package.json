@@ -29,6 +29,9 @@
     "url": "https://github.com/Andarist/callbag-of/issues"
   },
   "homepage": "https://github.com/Andarist/callbag-of#readme",
+  "dependencies": {
+    "callbag": "^1.4.0"
+  },
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
